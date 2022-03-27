@@ -2,7 +2,7 @@ package pro.learnup.javaqa.group2.chernykh2;
 
 public class Addition {
 
-    public static boolean isGreenLight = false;
+    public static boolean isGreenLight = true;
 
     private static int maxSpeed = 7;
 
@@ -11,12 +11,6 @@ public class Addition {
         if (!isGreenLight) {
             for (int speed : speeds) {
                 if (speed > maxSpeed) {
-                    start++;
-                }
-            }
-        } else {
-            for (int speed : speeds) {
-                if (speed < 0) {
                     start++;
                 }
             }
@@ -32,25 +26,12 @@ public class Addition {
                     cnt++;
                 }
             }
-        } else {
-            for (int speed : speeds) {
-                if (speed < 0) {
-                    cnt++;
-                }
-            }
         }
         int[] second = new int[cnt];
         int i = 0;
         if (!isGreenLight) {
             for (int speed : speeds) {
                 if (speed > maxSpeed) {
-                    second[i] = speed;
-                    i++;
-                }
-            }
-        } else {
-            for (int speed : speeds) {
-                if (speed < 0) {
                     second[i] = speed;
                     i++;
                 }
@@ -69,9 +50,7 @@ public class Addition {
             }
         } else {
             for (int speed : speeds) {
-                if (speed >= 0) {
-                    cnt++;
-                }
+                cnt++;
             }
         }
         int[] third = new int[cnt];
@@ -85,10 +64,8 @@ public class Addition {
             }
         } else {
             for (int speed : speeds) {
-                if (speed >= 0) {
-                    third[i] = speed;
-                    i++;
-                }
+                third[i] = speed;
+                i++;
             }
         }
         return third;
